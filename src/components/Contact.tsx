@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import * as fbq from '@/lib/fpixel';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -40,6 +41,12 @@ const Contact = () => {
             const data = await response.json();
 
             if (response.ok) {
+                // Rastrear evento de lead
+                fbq.lead({
+                    content_name: 'Formulário de Orçamento',
+                    status: 'success',
+                });
+
                 setStatus({
                     type: 'success',
                     message: 'Mensagem enviada com sucesso! Em breve entraremos em contato.'
@@ -49,6 +56,12 @@ const Contact = () => {
                 throw new Error(data.error || 'Erro ao enviar mensagem');
             }
         } catch (error) {
+            // Rastrear erro no formulário
+            fbq.event('FormError', {
+                content_name: 'Formulário de Orçamento',
+                status: 'error',
+            });
+
             setStatus({
                 type: 'error',
                 message: 'Erro ao enviar mensagem. Por favor, tente novamente.'
