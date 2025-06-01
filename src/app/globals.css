@@ -1,0 +1,341 @@
+/* Variáveis de cores */
+:root {
+  --beige: #D7BDA2;
+  --dark-brown: #3E2600;
+  --light-brown: #AD9475;
+  --medium-brown: #5C431F;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--dark-brown);
+  background: white;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Estilos do Header */
+.header {
+  background-color: var(--beige);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: var(--dark-brown);
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+}
+
+.nav-link {
+  color: var(--dark-brown);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--medium-brown);
+}
+
+/* Estilos do Hero */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(to right, var(--dark-brown), var(--medium-brown));
+  margin-top: -80px;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.hero-content {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-text {
+  max-width: 800px;
+  color: var(--beige);
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.hero-description {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+/* Estilos dos Espaços */
+.spaces {
+  padding: 5rem 0;
+  background-color: white;
+}
+
+.spaces-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.spaces-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--dark-brown);
+  margin-bottom: 2rem;
+}
+
+.spaces-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.spaces-subtitle {
+  font-size: 1.8rem;
+  color: var(--medium-brown);
+  margin-bottom: 1.5rem;
+}
+
+.spaces-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: var(--dark-brown);
+}
+
+/* Estilos da Gastronomia */
+.gastronomy {
+  padding: 5rem 0;
+  background-color: var(--beige);
+}
+
+.gastronomy-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.gastronomy-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--dark-brown);
+  margin-bottom: 1rem;
+}
+
+.gastronomy-subtitle {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--medium-brown);
+  margin-bottom: 2rem;
+}
+
+.gastronomy-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.gastronomy-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: var(--dark-brown);
+}
+
+.gastronomy-highlight {
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--dark-brown);
+  margin-top: 2rem;
+}
+
+/* Estilos da Cerimônia */
+.ceremony {
+  padding: 5rem 0;
+  background-color: white;
+}
+
+.ceremony-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.ceremony-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--dark-brown);
+  margin-bottom: 2rem;
+}
+
+.ceremony-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ceremony-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: center;
+  color: var(--dark-brown);
+}
+
+/* Estilos do Contato/Orçamento */
+.contact {
+  padding: 5rem 0;
+  background-color: var(--dark-brown);
+  color: var(--beige);
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.contact-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.contact-form-container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-size: 0.875rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--light-brown);
+  color: var(--beige);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--beige);
+}
+
+/* Botões */
+.btn {
+  padding: 1rem 2rem;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--dark-brown);
+  color: var(--beige);
+}
+
+.btn-primary:hover {
+  background-color: var(--medium-brown);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: var(--beige);
+  color: var(--dark-brown);
+}
+
+.btn-secondary:hover {
+  background-color: var(--light-brown);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--beige);
+  color: var(--beige);
+}
+
+.btn-outline:hover {
+  background-color: rgba(215, 189, 162, 0.1);
+  transform: translateY(-2px);
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* Tipografia */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+

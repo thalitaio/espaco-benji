@@ -1,0 +1,524 @@
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #D7BDA2;
+  box-shadow: 0 2px 4px rgba(62, 38, 0, 0.1);
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: block;
+}
+
+.logo-image {
+  object-fit: contain;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  color: #3E2600;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #5C431F;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.btn-primary {
+  background: #3E2600;
+  color: #D7BDA2;
+}
+
+.btn-primary:hover {
+  background: #5C431F;
+  transform: translateY(-2px);
+}
+
+/* Hero */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 2rem;
+  color: white;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(62, 38, 0, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  color: #D7BDA2;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #D7BDA2;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn-secondary {
+  background: #D7BDA2;
+  color: #3E2600;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: #AD9475;
+}
+
+.btn-outline {
+  border: 2px solid #D7BDA2;
+  color: #D7BDA2;
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: #D7BDA2;
+  color: #3E2600;
+}
+
+/* Spaces */
+.spaces {
+  padding: 6rem 2rem;
+  background: #fff;
+}
+
+.spaces-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.spaces-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+  color: #3E2600;
+  font-weight: 300;
+}
+
+.spaces-content {
+  display: grid;
+  grid-template-columns: minmax(400px, 1fr) minmax(600px, 1.5fr);
+  gap: 4rem;
+  align-items: stretch;
+  margin-bottom: 4rem;
+  min-height: 700px;
+}
+
+.spaces-image-grid {
+  display: grid;
+  gap: 2rem;
+  height: 100%;
+}
+
+.spaces-image {
+  width: 100%;
+  height: calc(50% - 1rem);
+  min-height: 330px;
+  object-fit: cover;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(62, 38, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.spaces-image:hover {
+  transform: translateY(-5px);
+}
+
+.spaces-text {
+  padding: 3rem;
+  color: #5C431F;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(62, 38, 0, 0.05);
+}
+
+.spaces-subtitle {
+  color: #3E2600;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.spaces-description {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+/* Gastronomy */
+.gastronomy {
+  padding: 8rem 2rem;
+  background: #f9f9f9;
+  position: relative;
+}
+
+.gastronomy::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(215, 189, 162, 0.1), rgba(62, 38, 0, 0.05));
+}
+
+.gastronomy-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.gastronomy-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #3E2600;
+  font-weight: 300;
+}
+
+.gastronomy-subtitle {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 4rem;
+  color: #5C431F;
+  font-weight: 400;
+}
+
+.gastronomy-content {
+  display: grid;
+  grid-template-columns: minmax(400px, 1fr) minmax(500px, 1.2fr);
+  gap: 4rem;
+  align-items: stretch;
+  min-height: 600px;
+}
+
+.gastronomy-image-grid {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2rem;
+  height: 100%;
+}
+
+.gastronomy-image {
+  width: 100%;
+  height: calc(50% - 1rem);
+  min-height: 280px;
+  object-fit: cover;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(62, 38, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gastronomy-image:hover {
+  transform: translateY(-5px);
+}
+
+.gastronomy-text {
+  padding: 3rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(62, 38, 0, 0.05);
+  color: #5C431F;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.gastronomy-description {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.gastronomy-highlight {
+  color: #3E2600;
+  font-weight: 600;
+  margin-top: auto;
+  font-size: 1.2rem;
+  text-align: center;
+  font-style: italic;
+  padding-top: 2rem;
+}
+
+/* Ceremony */
+.ceremony {
+  padding: 8rem 2rem;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.ceremony::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(-45deg, rgba(215, 189, 162, 0.1), rgba(62, 38, 0, 0.05));
+}
+
+.ceremony-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.ceremony-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+  color: #3E2600;
+  font-weight: 300;
+}
+
+.ceremony-content {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.ceremony-image-wrapper {
+  position: relative;
+}
+
+.ceremony-image {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(62, 38, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.ceremony-image:hover {
+  transform: translateY(-5px);
+}
+
+.ceremony-description {
+  color: #5C431F;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(62, 38, 0, 0.05);
+}
+
+/* Contact */
+.contact {
+  padding: 6rem 2rem;
+  background: #f9f9f9;
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #3E2600;
+}
+
+.contact-form-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-weight: 500;
+  color: #3E2600;
+}
+
+.form-input {
+  padding: 0.75rem;
+  border: 1px solid #D7BDA2;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #AD9475;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+.form-message {
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.form-message.success {
+  background-color: rgba(215, 189, 162, 0.2);
+  color: #3E2600;
+  border: 1px solid #D7BDA2;
+}
+
+.form-message.error {
+  background-color: rgba(220, 38, 38, 0.1);
+  color: #dc2626;
+  border: 1px solid #dc2626;
+}
+
+.btn-secondary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .spaces-content,
+  .gastronomy-content {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    gap: 3rem;
+  }
+
+  .spaces-image-grid {
+    height: 600px;
+  }
+
+  .gastronomy-image-grid {
+    height: 800px;
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  .spaces-text,
+  .gastronomy-text {
+    height: auto;
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .spaces-image-grid {
+    height: 400px;
+  }
+
+  .gastronomy-image-grid {
+    height: 600px;
+  }
+
+  .spaces-title,
+  .gastronomy-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .spaces-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .gastronomy-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+  }
+
+  .spaces,
+  .gastronomy {
+    padding: 4rem 1.5rem;
+  }
+
+  .spaces-text,
+  .gastronomy-text {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .spaces-image-grid {
+    height: 300px;
+  }
+
+  .gastronomy-image-grid {
+    height: 400px;
+  }
+
+  .spaces-description,
+  .gastronomy-description {
+    font-size: 1rem;
+  }
+} 
