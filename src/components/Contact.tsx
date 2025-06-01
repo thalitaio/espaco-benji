@@ -81,7 +81,7 @@ const Contact = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
                 >
-                    Preencha o Formulário abaixo e receba seu orçamento!
+                    Preencha o formulário abaixo e receba seu orçamento!
                 </motion.h2>
                 <motion.div
                     className="contact-form-container"
