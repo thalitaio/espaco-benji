@@ -16,7 +16,13 @@ const Ceremony = () => {
                 >
                     Cerimônia No Local
                 </motion.h2>
-                <div className="ceremony-content">
+                <motion.div
+                    className="ceremony-content"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                >
                     <motion.div
                         className="ceremony-image-wrapper"
                         initial={{ opacity: 0, scale: 0.95 }}
@@ -26,25 +32,30 @@ const Ceremony = () => {
                     >
                         <Image
                             src="/images/cerimonia.jpg"
-                            alt="Cerimônia ao ar livre"
-                            width={800}
-                            height={500}
+                            alt="Cerimônia ao ar livre no Espaço Benji"
+                            width={1200}
+                            height={800}
                             className="ceremony-image"
                             priority
                         />
                     </motion.div>
                     <motion.div
                         className="ceremony-description"
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.2 }}
                     >
-                        No Espaço Benji, você pode realizar sua cerimônia no próprio espaço, em meio à natureza
-                        e com uma estética inspirada na Grécia e no Mediterrâneo. Um cenário sofisticado, elegante
-                        e inesquecível para dizer "sim", com toda a praticidade de ter cerimônia e festa no mesmo lugar.
+                        <p>
+                            No Espaço Benji, você pode realizar sua cerimônia no próprio local, em meio à natureza
+                            e com uma estética inspirada na Grécia e no Mediterrâneo.
+                        </p>
+                        <p style={{ marginTop: '1rem' }}>
+                            Um cenário sofisticado, elegante e inesquecível para dizer "sim", com toda a
+                            praticidade de ter cerimônia e festa no mesmo lugar.
+                        </p>
                     </motion.div>
-                </div>
+                </motion.div>
             </div>
         </section>
     );

@@ -7,6 +7,10 @@
   background: #D7BDA2;
   box-shadow: 0 2px 4px rgba(62, 38, 0, 0.1);
   z-index: 1000;
+  padding: 1rem;
+  height: 80px;
+  display: flex;
+  align-items: center;
 }
 
 .nav-container {
@@ -15,14 +19,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 1rem;
+  width: 100%;
 }
 
 .logo {
   display: block;
+  height: 80px;
+  margin-right: auto;
 }
 
 .logo-image {
   object-fit: contain;
+  height: 100%;
+  width: auto;
+  max-width: 150px;
 }
 
 .nav-links {
@@ -62,7 +73,7 @@
 
 /* Hero */
 .hero {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,6 +81,8 @@
   padding: 6rem 2rem;
   color: white;
   position: relative;
+  margin-top: 0;
+  padding-top: calc(80px + 2rem);
 }
 
 .hero::before {
@@ -86,6 +99,7 @@
   position: relative;
   z-index: 1;
   max-width: 800px;
+  padding: 0 1rem;
 }
 
 .hero h1 {
@@ -104,6 +118,7 @@
   display: flex;
   gap: 1rem;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .btn-secondary {
@@ -132,6 +147,9 @@
 .spaces {
   padding: 6rem 2rem;
   background: #fff;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
 }
 
 .spaces-container {
@@ -208,6 +226,9 @@
   padding: 8rem 2rem;
   background: #f9f9f9;
   position: relative;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
 }
 
 .gastronomy::before {
@@ -306,6 +327,9 @@
   background: #fff;
   position: relative;
   overflow: hidden;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
 }
 
 .ceremony::before {
@@ -341,19 +365,21 @@
 
 .ceremony-image-wrapper {
   position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(62, 38, 0, 0.1);
 }
 
 .ceremony-image {
   width: 100%;
   height: auto;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(62, 38, 0, 0.1);
+  aspect-ratio: 16/10;
+  object-fit: cover;
   transition: transform 0.3s ease;
 }
 
 .ceremony-image:hover {
-  transform: translateY(-5px);
+  transform: scale(1.05);
 }
 
 .ceremony-description {
@@ -368,8 +394,11 @@
 
 /* Contact */
 .contact {
-  padding: 6rem 2rem;
+  min-height: calc(100dvh - 80px);
+  padding: 4rem 2rem;
   background: #f9f9f9;
+  display: flex;
+  align-items: center;
 }
 
 .contact-container {
@@ -412,6 +441,7 @@
   border: 1px solid #D7BDA2;
   border-radius: 5px;
   font-size: 1rem;
+  color: #3E2600;
 }
 
 .form-input:focus {
@@ -448,6 +478,20 @@
   cursor: not-allowed;
 }
 
+/* Mobile Menu */
+.mobile-menu-button {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-left: auto;
+}
+
+.mobile-menu {
+  display: none;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .spaces-content,
@@ -458,67 +502,240 @@
   }
 
   .spaces-image-grid {
-    height: 600px;
-  }
-
-  .gastronomy-image-grid {
-    height: 800px;
-    grid-template-rows: repeat(3, 1fr);
-  }
-
-  .spaces-text,
-  .gastronomy-text {
     height: auto;
-    padding: 2rem;
+  }
+
+  .spaces-image {
+    min-height: 250px;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .ceremony-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .ceremony {
+    padding: 6rem 2rem;
+  }
+
+  .ceremony-title {
+    margin-bottom: 3rem;
+  }
+
+  .spaces,
+  .gastronomy,
+  .ceremony,
+  .contact {
+    min-height: auto;
+    padding: 5rem 2rem;
   }
 }
 
 @media (max-width: 768px) {
-  .spaces-image-grid {
-    height: 400px;
+  .header {
+    padding: 0.5rem 1rem;
+    height: 70px;
   }
 
-  .gastronomy-image-grid {
-    height: 600px;
+  .nav-container {
+    padding: 0;
+    justify-content: flex-start;
+  }
+
+  .logo {
+    height: 45px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: block;
+    position: relative;
+    z-index: 2;
+  }
+
+  .mobile-menu.active {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: #D7BDA2;
+    padding: 1rem;
+    gap: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(62, 38, 0, 0.1);
+  }
+
+  .hero {
+    padding-top: calc(70px + 1rem);
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .spaces-title,
   .gastronomy-title {
     font-size: 2rem;
-    margin-bottom: 2rem;
   }
 
   .spaces-subtitle {
     font-size: 1.5rem;
   }
 
-  .gastronomy-subtitle {
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
+  .spaces-text,
+  .gastronomy-text {
+    padding: 1.25rem;
+  }
+
+  .contact-container {
+    padding: 0 1rem;
+  }
+
+  .contact-form-container {
+    padding: 1.25rem;
+  }
+
+  .form-input {
+    font-size: 16px;
+  }
+
+  .ceremony {
+    padding: 3rem 1rem;
+  }
+
+  .ceremony-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .ceremony-content {
+    gap: 1.5rem;
+  }
+
+  .ceremony-description {
+    padding: 1.25rem;
+    font-size: 1rem;
   }
 
   .spaces,
-  .gastronomy {
-    padding: 4rem 1.5rem;
+  .gastronomy,
+  .ceremony {
+    padding: 3rem 1rem;
   }
 
-  .spaces-text,
-  .gastronomy-text {
-    padding: 1.5rem;
+  .contact {
+    padding: 3rem 1rem;
+  }
+
+  .spaces-title,
+  .gastronomy-title,
+  .ceremony-title {
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-title {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+  }
+
+  .form-group {
+    gap: 0.25rem;
   }
 }
 
 @media (max-width: 480px) {
-  .spaces-image-grid {
-    height: 300px;
+  .logo {
+    height: 40px;
   }
 
-  .gastronomy-image-grid {
-    height: 400px;
+  .logo-image {
+    max-width: 120px;
   }
 
-  .spaces-description,
-  .gastronomy-description {
-    font-size: 1rem;
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .spaces-title,
+  .gastronomy-title {
+    font-size: 1.8rem;
+  }
+
+  .spaces-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .ceremony-title {
+    font-size: 1.8rem;
+  }
+
+  .ceremony-image {
+    aspect-ratio: 3/2;
+  }
+
+  .spaces,
+  .gastronomy,
+  .ceremony {
+    padding: 2.5rem 1rem;
+  }
+
+  .contact {
+    padding: 2.5rem 1rem;
+  }
+
+  .spaces-image,
+  .gastronomy-image {
+    min-height: 200px;
+  }
+
+  .ceremony-image {
+    aspect-ratio: 3/2;
+  }
+
+  .spaces-text,
+  .gastronomy-text,
+  .ceremony-description {
+    padding: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .contact-form-container {
+    padding: 1rem;
+  }
+
+  .form-input {
+    padding: 0.6rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1.2rem;
   }
 } 

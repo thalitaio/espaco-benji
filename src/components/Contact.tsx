@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import * as fbq from '@/lib/fpixel';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -41,30 +40,21 @@ const Contact = () => {
             const data = await response.json();
 
             if (response.ok) {
-                // Rastrear evento de lead
-                fbq.lead({
-                    content_name: 'Formulário de Orçamento',
-                    status: 'success',
-                });
-
                 setStatus({
                     type: 'success',
                     message: 'Mensagem enviada com sucesso! Em breve entraremos em contato.'
                 });
                 setFormData({ nome: '', email: '', telefone: '' });
             } else {
-                throw new Error(data.error || 'Erro ao enviar mensagem');
+                const errorMessage = data.error || 'Erro ao enviar mensagem. Tente novamente.';
+                console.error('Erro na resposta:', data);
+                throw new Error(errorMessage);
             }
         } catch (error) {
-            // Rastrear erro no formulário
-            fbq.event('FormError', {
-                content_name: 'Formulário de Orçamento',
-                status: 'error',
-            });
-
+            console.error('Erro ao enviar:', error);
             setStatus({
                 type: 'error',
-                message: 'Erro ao enviar mensagem. Por favor, tente novamente.'
+                message: error instanceof Error ? error.message : 'Erro ao enviar mensagem. Por favor, tente novamente.'
             });
         } finally {
             setIsSubmitting(false);
