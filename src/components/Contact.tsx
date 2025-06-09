@@ -7,7 +7,8 @@ const Contact = () => {
     const [formData, setFormData] = useState({
         nome: '',
         email: '',
-        telefone: ''
+        telefone: '',
+        ano: ''
     });
     const [status, setStatus] = useState({
         type: '',
@@ -15,7 +16,10 @@ const Contact = () => {
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // Gera array com os próximos 5 anos
+    const anos = Array.from({ length: 5 }, (_, i) => new Date().getFullYear() + i);
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         setFormData(prev => ({
             ...prev,
@@ -44,7 +48,7 @@ const Contact = () => {
                     type: 'success',
                     message: 'Mensagem enviada com sucesso! Em breve entraremos em contato.'
                 });
-                setFormData({ nome: '', email: '', telefone: '' });
+                setFormData({ nome: '', email: '', telefone: '', ano: '' });
             } else {
                 const errorMessage = data.error || 'Erro ao enviar mensagem. Tente novamente.';
                 console.error('Erro na resposta:', data);
@@ -134,6 +138,27 @@ const Contact = () => {
                                 onChange={handleChange}
                                 required
                             />
+                        </motion.div>
+                        <motion.div
+                            className="form-group"
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.6 }}
+                        >
+                            <label className="form-label" htmlFor="ano">Para qual ano é o seu casamento?</label>
+                            <select
+                                id="ano"
+                                name="ano"
+                                className="form-input form-select"
+                                value={formData.ano}
+                                onChange={handleChange}
+                            >
+                                <option value="">Selecione o ano</option>
+                                {anos.map(ano => (
+                                    <option key={ano} value={ano}>{ano}</option>
+                                ))}
+                            </select>
                         </motion.div>
                         {status.message && (
                             <div className={`form-message ${status.type}`}>

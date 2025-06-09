@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const Hero = () => {
     return (
         <section id="home" className="hero" style={{
-            backgroundImage: 'url("/images/hero-bg.jpg")',
+            backgroundImage: 'url("/images/benji-casamento.jpg")',
             backgroundSize: 'cover',
             backgroundPosition: 'center'
         }}>

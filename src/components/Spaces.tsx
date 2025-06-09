@@ -14,7 +14,7 @@ const Spaces = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
                 >
-                    Nossos Espaços
+                    O Espaço
                 </motion.h2>
                 <div className="spaces-content">
                     <motion.div
@@ -25,14 +25,14 @@ const Spaces = () => {
                         transition={{ duration: 0.8 }}
                     >
                         <Image
-                            src="/images/espaco-1.jpg"
+                            src="/images/nosso-espaco-1.jpg"
                             alt="Espaço para cerimônia"
                             width={600}
                             height={400}
                             className="spaces-image"
                         />
                         <Image
-                            src="/images/espaco-2.jpg"
+                            src="/images/nosso-espaco-2.jpg"
                             alt="Área de festas"
                             width={600}
                             height={400}
@@ -60,6 +60,22 @@ const Spaces = () => {
                         </p>
                     </motion.div>
                 </div>
+                <motion.div
+                    className="spaces-cta"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                >
+                    <motion.a
+                        href="#orcamento"
+                        className="btn btn-primary btn-lg"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                    >
+                        Solicite um Orçamento
+                    </motion.a>
+                </motion.div>
             </div>
         </section>
     );

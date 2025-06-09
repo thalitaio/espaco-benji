@@ -31,7 +31,7 @@ const Ceremony = () => {
                         transition={{ duration: 0.8 }}
                     >
                         <Image
-                            src="/images/cerimonia.jpg"
+                            src="/images/local-cerimonia.jpg"
                             alt="Cerimônia ao ar livre no Espaço Benji"
                             width={1200}
                             height={800}
