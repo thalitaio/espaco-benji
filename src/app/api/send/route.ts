@@ -15,7 +15,7 @@ export async function POST(request: Request) {
         }
 
         const data = await resend.emails.send({
-            from: 'Espaço Benji <contato@benjifestas.com.br>',
+            from: 'Espaço Benji <onboarding@resend.dev>',
             to: ['benjifestas@gmail.com'],
             reply_to: email,
             subject: 'Novo pedido de orçamento - Espaço Benji',
