@@ -54,14 +54,7 @@ const Gastronomy = () => {
                         transition={{ duration: 0.8 }}
                     >
                         <Image
-                            src="/images/gastronomia.jpg"
-                            alt="Pratos do buffet"
-                            width={600}
-                            height={400}
-                            className="gastronomy-image"
-                        />
-                        <Image
-                            src="/images/gastronomia-2.jpg"
+                            src="/images/gastronomia-benji.jpg"
                             alt="Sobremesas"
                             width={600}
                             height={400}
